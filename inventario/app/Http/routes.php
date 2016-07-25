@@ -30,3 +30,13 @@ Route::get('/login', function () {
 Route::get('/registro', function () {
     return view('registro');
 });
+
+Route::post('registro', 'HomeController@insertar');
+
+Route::post('login', 'HomeController@login');
+
+Route::get('login', function () {
+   return view('login', ['error' => '']);});
+
+Route::get('registro', function () {
+   return view('registro', ['error' => '']);});
