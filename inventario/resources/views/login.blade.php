@@ -3,23 +3,23 @@
 @section('content')
 <div class="container">
 <div class="row center cajon">
-    <form class="col s12">
+    <form class="col s12" method="POST" action="{{asset('login')}}">
+      {{Csrf_field ()}}
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
+          <input id="log_email" type="email" class="validate" name="log_email">
           <label for="email" data-error="wrong">Email</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="log_pass" type="password" class="validate" name="log_pass">
           <label for="password">Password</label>
         </div>
       </div class="">
-      <button type="submit" name="btnlogin" >Iniciar Sesion</button>
+      <button type="submit" name="btnlogin" class="btn" >Iniciar Sesion</button>
     </form>
   </div>
 </div>
-
-
+<footer class="animated bounceInLeft"><p>{{$error}}</p></footer>
 @stop
