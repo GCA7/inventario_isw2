@@ -23,9 +23,8 @@ Route::get('/index', function () {
     return view('index');
 });
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/login', function () { return view('login'); });
+Route::get('logOut','HomeController@logOut');
 
 Route::get('/registro', function () {
     return view('registro');
@@ -36,7 +35,9 @@ Route::post('registro', 'HomeController@insertar');
 Route::post('login', 'HomeController@login');
 
 Route::get('login', function () {
-   return view('login', ['error' => '']);});
+   return view('login', ['error' => ''], ['estado' => 'registrarme']);});
 
 Route::get('registro', function () {
    return view('registro', ['error' => '']);});
+ Route::get('principal', function () {
+      return view('principal', ['estado' => 'Cerrar Sesión']);});

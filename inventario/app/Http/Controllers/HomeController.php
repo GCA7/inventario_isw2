@@ -39,12 +39,16 @@ class HomeController extends Controller
       if ($contraseña == $request->input("log_pass") && $user->email == $request->input("log_email") ){
         Cache::add('usuario',$request->input("log_email"),60);
         return redirect('principal');
-    }else{
+        }else{
         return view('login', ['error' => 'Usuario o contraseña incorrecta']);
     }
 }
 }
 
+  public function logOut(Request $request){
+    Cache::flush();
+    return redirect('login');
+}
 
 
 }
