@@ -14,7 +14,7 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="#" title="carrito de compras"><i class="material-icons">shopping_cart</i></a></li>
       <li><a href="#">Contacto</a></li>
-      <li><a href="#">Cerrar Sesion</a></li>
+      <li><a href="{{asset('logOut')}}">{{$estado}}</a></li>
     </ul>
   </div>
 </nav>
