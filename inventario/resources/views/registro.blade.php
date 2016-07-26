@@ -2,15 +2,6 @@
 
 @section('content')
 <div class="row">
-  @if (count($errors) > 0)
-            <div class="alert alert-danger animated bounceInLeft" style="color:gray;" role="alert">
-             <ul>
-                @foreach ($errors->all() as $error)
-                <li>{{$error}}</li>
-                @endforeach
-            </ul>
-        </div>
-        @endif
     <form class="col s12" method="POST" action="{{asset('registro')}}">
       	{{Csrf_field ()}}
       <div class="row">
@@ -37,10 +28,13 @@
           <label for="email" data-error="wrong">Email</label>
         </div>
       </div>
+      <div class="center">
       <button type="submit" name="btn-registro" class="btn blue-grey darken-3">Registrarme</button>
       <button type="submit" name="btn-cancel" class="btn blue-grey darken-3">Cancelar</button>
+      </div>
     </form>
   </div>
+  <footer class="animated bounceInLeft center"><p>{{$error}}</p></footer>
 
 
 

@@ -13,6 +13,12 @@ class HomeController extends Controller
 {
   public function insertar(Request $request)
   {
+      $user= DB::table('users')->select('email')->get();
+      foreach ($user as $user) {
+        if($user->email == $request->input('email')){
+          return view('registro', ['error' => 'Ese correo ya se encuentra registrado']);
+        }
+      }
       if($request->input('password') == $request->input('pass') ){
       $user = new User;
       $user->name = $request->input('first_name');
@@ -23,11 +29,11 @@ class HomeController extends Controller
     }else{
       return view('registro', ['error' => 'Las contraseñas no coinciden']);
     }
+
   }
 
   public function login(Request $request){
     $user= DB::table('users')->select('password', 'email')->where('email',$request->input("log_email"))->get();
-    var_dump($request->input("log_email"));
     foreach ($user as $user) {
       $contraseña= Crypt::decrypt($user->password);
       if ($contraseña == $request->input("log_pass") && $user->email == $request->input("log_email") ){

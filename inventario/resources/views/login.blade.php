@@ -1,7 +1,7 @@
 @extends('principal')
 
 @section('content')
-<div class="container">
+<div class="">
 <div class="row center cajon">
     <form class="col s12" method="POST" action="{{asset('login')}}">
       {{Csrf_field ()}}
@@ -17,9 +17,9 @@
           <label for="password">Password</label>
         </div>
       </div class="">
-      <button type="submit" name="btnlogin" class="btn" >Iniciar Sesion</button>
+      <button type="submit" name="btnlogin" class="btn blue-grey darken-3" >Iniciar Sesion</button>
     </form>
   </div>
 </div>
-<footer class="animated bounceInLeft"><p>{{$error}}</p></footer>
+<footer class="animated bounceInLeft center"><p>{{$error}}</p></footer>
 @stop
