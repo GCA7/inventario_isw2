@@ -49,6 +49,11 @@ class HomeController extends Controller
     Cache::flush();
     return redirect('login');
 }
+public function Products()
+{
+  $product= DB::table('products')->get();
+  return view('principal', ['estado' => 'Cerrar Sesión'],['products'=>$product]);
+}
 
 
 }
