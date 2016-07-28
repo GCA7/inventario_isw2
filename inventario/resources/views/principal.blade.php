@@ -29,16 +29,18 @@
            </div>
            <div class="card-content">
            <span class="card-title activator grey-text text-darken-4">{{$product->nombre}}<i class="material-icons right">more_vert</i></span>
-           <p><a href="#">This is a link</a></p>
            </div>
            <div class="card-reveal">
            <span class="card-title grey-text text-darken-4">{{$product->nombre}}<i class="material-icons right">close</i></span>
            <p>{{$product->descripcion}}</p>
-           <p>₡{{$product->precio}} </p>
+           <p><span>Precio: </span>₡{{$product->precio}} </p>
            <ul class="collapsible" data-collapsible="accordion">
            <li>
-           <div class="collapsible-header"><i class="material-icons">filter_drama</i>Añadir al carrito</div>
-           <div class="collapsible-body"><p>Producto disponible por unidad: {{$product->cantidad}}</p></div>
+           <div class="collapsible-header center"><i class="material-icons">shopping_cart</i>Comprar</div>
+           <div class="collapsible-body"><p>En stock: {{$product->cantidad}}</p>
+            <a href="#!" class="collection-item">Elija cantidad<input class="new badge center"></a>
+          <button type="submit" name="button" class="btn">Añadir al carrito</button></br>
+          </div>
            </li>
            </ul>
            </div>
