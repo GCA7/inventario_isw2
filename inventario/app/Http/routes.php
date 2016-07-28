@@ -40,6 +40,6 @@ Route::get('login', function () {
 Route::get('registro', function () {
    return view('registro', ['error' => '']);});
 
- Route::get('principal', 'HomeController@Products', function () {
+ Route::get('productos', 'HomeController@Products', function () {
    return controller('HomeController@Products');
   });
