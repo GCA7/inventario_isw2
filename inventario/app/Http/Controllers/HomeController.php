@@ -54,6 +54,11 @@ public function Products()
   $product= DB::table('products')->get();
   return view('principal', ['estado' => 'Cerrar Sesión'],['products'=>$product]);
 }
-
+public function GuardarCarrito(Request $request){
+$cantidad = $request->input('cantidad');
+if ($request->has('cantidad')) {
+    echo "yes";
+}
+}
 
 }
