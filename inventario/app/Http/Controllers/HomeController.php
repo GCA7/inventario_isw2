@@ -52,7 +52,7 @@ class HomeController extends Controller
 public function Products()
 {
   $product= DB::table('products')->get();
-  return view('principal', ['estado' => 'Cerrar Sesión'],['products'=>$product]);
+  return view('productos', ['estado' => 'Cerrar Sesión'],['products'=>$product]);
 }
 public function GuardarCarrito(Request $request){
 $cantidad = $request->input('cantidad');

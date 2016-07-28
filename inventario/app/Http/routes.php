@@ -12,22 +12,22 @@
 */
 
 Route::get('/', function () {
-  return view('welcome');
+    return view('welcome');
 });
 
 Route::get('/principal', function () {
-  return view('principal');
+    return view('principal');
 });
 
 Route::get('/index', function () {
-  return view('index');
+    return view('index');
 });
 
 Route::get('/login', function () { return view('login'); });
 Route::get('logOut','HomeController@logOut');
 
 Route::get('/registro', function () {
-  return view('registro');
+    return view('registro');
 });
 
 Route::post('registro', 'HomeController@insertar');
@@ -35,12 +35,11 @@ Route::post('registro', 'HomeController@insertar');
 Route::post('login', 'HomeController@login');
 
 Route::get('login', function () {
-  return view('login', ['error' => ''], ['estado' => 'registrarme']);});
+   return view('login', ['error' => ''], ['estado' => 'registrarme']);});
 
-  Route::get('registro', function () {
-    return view('registro', ['error' => '']);});
+Route::get('registro', function () {
+   return view('registro', ['error' => '']);});
 
-    Route::get('principal', 'HomeController@Products', function () {
-      return controller('HomeController@Products');
-    });
-    Route::post('principal', 'HomeController@GuardarCarrito');
+ Route::get('productos', 'HomeController@Products', function () {
+   return controller('HomeController@Products');
+  });
