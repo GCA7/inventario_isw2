@@ -38,7 +38,7 @@
            <li>
            <div class="collapsible-header center"><i class="material-icons">shopping_cart</i>Comprar</div>
            <div class="collapsible-body"><p>En stock: {{$product->cantidad}}</p>
-            <a href="#!" class="collection-item">Elija cantidad<input class="new badge center"></a>
+            <a href="#!" class="collection-item">Elija cantidad<input class="new badge center" placeholder="cantidad"></a>
           <button type="submit" name="button" class="btn">Añadir al carrito</button></br>
           </div>
            </li>
