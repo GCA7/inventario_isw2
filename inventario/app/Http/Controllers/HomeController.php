@@ -38,7 +38,7 @@ class HomeController extends Controller
       $contraseña= Crypt::decrypt($user->password);
       if ($contraseña == $request->input("log_pass") && $user->email == $request->input("log_email") ){
         Cache::add('usuario',$request->input("log_email"),60);
-        return redirect('principal');
+        return redirect('productos');
         }else{
         return view('login', ['error' => 'Usuario o contraseña incorrecta']);
     }
@@ -54,8 +54,10 @@ public function Products()
   $product= DB::table('products')->get();
   return view('productos', ['estado' => 'Cerrar Sesión'],['products'=>$product]);
 }
-public function GuardarCarrito(Request $request){
+public function GuardarCarrito(Request $request, $id){
 $cantidad = $request->input('cantidad');
+$precio = $request->input('descripcion');
+var_dump($id);
 if ($request->has('cantidad')) {
     echo "yes";
 }

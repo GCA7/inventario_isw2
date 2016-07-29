@@ -32,10 +32,12 @@ Route::get('/registro', function () {
 
 Route::post('registro', 'HomeController@insertar');
 
+Route::post('productos/{id}', 'HomeController@GuardarCarrito');
+
 Route::post('login', 'HomeController@login');
 
 Route::get('login', function () {
-   return view('login', ['error' => ''], ['estado' => 'registrarme']);});
+   return view('login', ['error' => ''], ['estado' => 'Registrarme']);});
 
 Route::get('registro', function () {
    return view('registro', ['error' => '']);});
